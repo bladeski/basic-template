@@ -1,0 +1,1 @@
+import IndexController from './indexController';

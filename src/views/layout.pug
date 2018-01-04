@@ -2,7 +2,22 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/res/bootstrap/bootstrap.min.css')
+    link(rel='stylesheet', href='/lib/bootstrap-material-design/bootstrap-material-design.min.css')
+    link(rel="stylesheet" href="/lib/bootstrap-material-design/icons/css/material-icons.min.css")
     link(rel='stylesheet', href='/styles/style.css')
+    script(src="/lib/babel/polyfill.min.js")
+    script(src="/scripts/indexController.js")
   body
     block content
+    
+    script(src="/lib/jquery/jquery.min.js")
+    script(src="/lib/popper.js/popper.min.js")
+    script(src="/lib/bootstrap-material-design/bootstrap-material-design.min.js")
+    script
+        | $(document).ready(function() { $('body').bootstrapMaterialDesign(); });
+    script(src="/lib/requirejs/require.js")
+    script
+        | require(['scripts/config'], function (){
+        |   
+        block scripts
+        | });
