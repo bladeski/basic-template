@@ -34,7 +34,8 @@
         "morgan": "^1.8.1",
         "serve-favicon": "^2.4.2",
         "perfect-scrollbar": "^0.7.0",
-        "idb": "^2.0.4"
+        "idb": "^2.0.4",
+        "feather-icons": "^4.7.0"
     },
     "devDependencies": {
         "babel-cli": "^6.24.0",

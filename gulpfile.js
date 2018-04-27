@@ -53,6 +53,14 @@ gulp.task('build', ['clean'], function () {
         name: 'Perfect Scrollbar CSS',
         dir: 'perfect-scrollbar/css',
         paths: ['perfect-scrollbar/dist/css/perfect-scrollbar.min.css']
+    }, {
+        name: 'Feather Icons JS',
+        dir: 'feather-icons',
+        paths: ['feather-icons/dist/feather.min.js']
+    }, {
+        name: 'Feather Icons Icons',
+        dir: 'feather-icons/icons',
+        paths: ['feather-icons/dist/icons/*.svg']
     }];
 
     dependencies.forEach(function (dep) {

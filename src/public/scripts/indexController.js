@@ -1,4 +1,5 @@
 import idb from 'idb';
+const feather = require('feather-icons');
 
 function openDatabase() {
     // If the browser doesn't support service worker,

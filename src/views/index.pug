@@ -3,6 +3,7 @@ extends layout
 block content
     h1= title
     p Welcome to the #{title}
+    i(data-feather="heart")
 
 block scripts
     | require(['./scripts/index'], function(index) {});

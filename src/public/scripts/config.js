@@ -9,6 +9,7 @@ require.config({
         knockout: '/lib/knockout/knockout-latest',
         'perfect-scrollbar': '/lib/perfect-scrollbar/js/perfect-scrollbar.min',
         'socket.io': '/lib/socket.io/socket.io',
-        babel: '/lib/babel/polyfill.min'
+        babel: '/lib/babel/polyfill.min',
+        'feather-icons': '/lib/feather-icons/feather.min'
     }
 });
