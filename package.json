@@ -1,19 +1,28 @@
 {
-    "name": "basic-template",
-    "version": "0.0.1",
-    "description": "Generic template for a TypeScript based project.",
-    "keywords": ["template"],
-    "repository": "https://github.com/bladeski/basic-template.git",
-    "homepage": "https://github.com/bladeski/basic-template",
-    "author": "Jonathan Blades <jonoblades@gmail.com>",
-    "scripts": {
-        "preinstall": "npx scan-compromised"
-    },
-    "dependencies": {
-        
-    },
-    "devDependencies": {
-    },
-    "main": "index",
-    "license": "MIT"
+  "name": "basic-template",
+  "version": "0.0.1",
+  "description": "A basic TypeScript project template using Parcel bundler and ES modules.",
+  "type": "module",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "clean": "rm -rf .parcel-cache dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "parcel": "^2.12.0",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0"
+  },
+  "keywords": [
+    "typescript",
+    "parcel",
+    "esmodules",
+    "template"
+  ],
+  "author": "Jonathan Blades <jonoblades@gmail.com>",
+  "license": "MIT"
 }
