@@ -7,8 +7,10 @@
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{ts,tsx,html,css,json,md}'",
     "clean": "rm -rf .parcel-cache dist"
-  },
+  }
+,
   "dependencies": {},
   "devDependencies": {
     "typescript": "^5.4.0",
