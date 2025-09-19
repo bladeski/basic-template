@@ -1,53 +1,23 @@
-## Synopsis
+# 🛠️ TypeScript Project Template
 
-This is the winning submission of the 2013 npower Developer Challenge.
-The code is in the process of being refactored to tidy up and update the code, as well as making it run on its own node.js service.
-<!---
-## Code Example
+A minimal and flexible **TypeScript** starter template for building Node.js or browser-based applications.  
+Includes sensible defaults, linting, and build scripts to get you coding faster.
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+---
 
-## Motivation
+## 📦 Features
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+- ⚡ **TypeScript** for type safety and modern JavaScript features
+- 🧹 **ESLint + Prettier** for consistent code style
+- 🏗️ **Build scripts** with `tsc`
+- 🧪 **Jest** (optional) for testing
+- 📂 Clean folder structure
 
-## Installation
+---
 
-NPM install and run index.html
+## 🚀 Getting Started
 
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
-
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
---->
-
-## License
-
-MIT License
-
-Copyright (c) 2017 Jonathan Blades
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
