@@ -5,15 +5,14 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "rules": {
-    "semi": ["error", "always"],
-    "quotes": ["error", "single"],
+    "prettier/prettier": "error",
     "@typescript-eslint/no-unused-vars": ["warn"]
   }
 }
