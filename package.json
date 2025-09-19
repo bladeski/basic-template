@@ -1,48 +1,18 @@
 {
     "name": "basic-template",
-    "version": "0.1.0",
-    "description": "Generic template for an Express server and front-end using Pug.",
-    "keywords": ["node", "express", "template"],
+    "version": "0.0.1",
+    "description": "Generic template for a TypeScript based project.",
+    "keywords": ["template"],
     "repository": "https://github.com/bladeski/basic-template.git",
     "homepage": "https://github.com/bladeski/basic-template",
-    "author": "Jonathan Blades <jonathan@flatlinemedia.co.uk>",
+    "author": "Jonathan Blades <jonoblades@gmail.com>",
     "scripts": {
-        "start": "node ./src/bin/www"
+        "preinstall": "npx scan-compromised"
     },
     "dependencies": {
-        "gulp": "^3.9.1",
-        "gulp-install": "^1.1.0",
-        "gulp-run": "^1.7.1",
-        "gulp-babel": "^6.0.0",
-        "gulp-sourcemaps": "^2.6.1",
-        "gulp-concat": "^2.6.1",
-        "babel-polyfill": "^6.26.0",
-        "babel-preset-env": "^1.6.1",
-        "del": "^2.2.2",
-        "express": "^4.15.2",
-        "knockout": "^3.4.2",
-        "bootstrap-material-design": "^4.0.0-beta.4",
-        "bootstrap-material-design-icons": "^2.2.0",
-        "popper.js": "^1.12.9",
-        "requirejs": "^2.3.3",
-        "jquery": "^3.2.1",
-        "body-parser": "^1.17.1",
-        "cookie-parser": "^1.4.3",
-        "debug": "^2.6.3",
-        "pug": "^2.0.0-beta.12",
-        "less-middleware": "^2.2.0",
-        "morgan": "^1.8.1",
-        "serve-favicon": "^2.4.2",
-        "perfect-scrollbar": "^0.7.0",
-        "idb": "^2.0.4",
-        "feather-icons": "^4.7.0"
+        
     },
     "devDependencies": {
-        "babel-cli": "^6.24.0",
-        "babel-preset-es2015": "^6.24.0",
-        "babelify": "^8.0.0",
-        "browserify": "^14.5.0",
-        "rimraf": "^2.6.1"
     },
     "main": "index",
     "license": "MIT"
