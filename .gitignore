@@ -1,1 +1,13 @@
+# Node
 node_modules/
+npm-debug.log
+yarn-error.log
+
+# Parcel cache
+.parcel-cache/
+
+# Build output
+dist/
+
+# Environment files
+.env
