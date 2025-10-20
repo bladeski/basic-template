@@ -1,0 +1,39 @@
+@import url("vars.css");
+@import url("base.css");
+
+body {
+  line-height: 1.6;
+  font-size: var(--font-size-md);
+  padding: var(--space-lg);
+}
+
+/* small utility examples (optional) */
+.u-pad-sm {
+  padding: var(--space-sm);
+}
+.u-pad-md {
+  padding: var(--space-md);
+}
+.u-pad-lg {
+  padding: var(--space-lg);
+}
+
+.u-mr-sm {
+  margin-right: var(--space-sm);
+}
+.u-mb-md {
+  margin-bottom: var(--space-md);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+
+/* small helper to tighten spacing for compact headers */
+.header-compact {
+  margin-top: calc(var(--heading-margin-top) / 2);
+  margin-bottom: calc(var(--heading-margin-bottom) / 2);
+}

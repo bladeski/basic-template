@@ -1,0 +1,49 @@
+/* Design tokens / CSS variables */
+:root {
+  /* spacing (margins / paddings) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* font sizes */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+
+  /* color palette */
+  --color-primary: #0d6efd;
+  --color-primary-contrast: #ffffff;
+  --color-accent: #6610f2;
+  --color-bg: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-text: #212529;
+  --color-muted: #6c757d;
+  --color-border: #e9ecef;
+
+  --color-success: #198754;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+
+  /* radii & border */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --border-width: 1px;
+  --focus-ring: 0 0 0 3px rgba(13, 110, 253, 0.15);
+
+  /* heading size tokens */
+  --heading-1: 2rem; /* 32px */
+  --heading-2: 1.5rem; /* 24px */
+  --heading-3: 1.25rem; /* 20px */
+  --heading-4: 1rem; /* 16px */
+  --heading-5: 0.875rem; /* 14px */
+  --heading-6: 0.75rem; /* 12px */
+
+  /* default heading spacing */
+  --heading-margin-top: var(--space-lg);
+  --heading-margin-bottom: var(--space-md);
+  --heading-padding-vertical: var(--space-sm);
+}

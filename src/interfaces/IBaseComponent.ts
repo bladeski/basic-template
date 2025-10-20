@@ -1,6 +1,6 @@
 export type PropTypes = Record<string, unknown>;
 
-export interface BaseComponent<
+export interface IBaseComponent<
   TProps extends PropTypes = Record<string, never>,
   TEvents = unknown,
 > extends HTMLElement {
@@ -39,10 +39,7 @@ export interface BaseComponent<
   /**
    * Dispatch a typed custom event.
    */
-  emit<K extends keyof TEvents & string>(
-    eventName: K,
-    detail: TEvents[K]
-  ): void;
+  emit<K extends keyof TEvents & string>(eventName: K, detail: TEvents[K]): void;
 
   /**
    * Automatically binds event listeners from `data-action` attributes
