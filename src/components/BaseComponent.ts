@@ -1,24 +1,22 @@
+import type { compileTemplate } from 'pug';
+
 export abstract class BaseComponent<
-  TProps extends PropTypes = {},
-  TEvents = {}
-> extends HTMLElement implements BaseComponent<TProps, TEvents> {
+  TProps extends Record<string, unknown> = Record<string, never>,
+  TEvents = Record<string, never>,
+> extends HTMLElement {
   static observedAttributes: string[] = [];
 
   props = {} as TProps;
-  templateId?: string;
+  private templateFn?: (locals?: { props: TProps }) => string;
 
-  constructor(templateId?: string) {
+  constructor(templateFn?: (locals?: { props: TProps }) => string) {
     super();
     this.attachShadow({ mode: 'open' });
-    this.templateId = templateId;
+    this.templateFn = templateFn;
   }
 
   connectedCallback(): void {
     this.render();
-  }
-
-  disconnectedCallback(): void {
-    // Cleanup logic here
   }
 
   attributeChangedCallback(
@@ -27,11 +25,14 @@ export abstract class BaseComponent<
     newValue: string | null
   ): void {
     if (oldValue !== newValue) {
-      const propType = typeof (this.props as any)[name];
-      let value: any = newValue;
+      const currentValue = this.props[name];
+      const propType = typeof currentValue;
+      let value: unknown = newValue;
+
       if (propType === 'number') value = Number(newValue);
       if (propType === 'boolean') value = newValue !== null;
-      (this.props as any)[name] = value;
+
+      this.props = { ...this.props, [name]: value } as TProps;
       this.render();
     }
   }
@@ -46,37 +47,40 @@ export abstract class BaseComponent<
     }
   }
 
-  emit<K extends keyof TEvents & string>(eventName: K, detail: TEvents[K]): void {
-    this.dispatchEvent(new CustomEvent(eventName, { detail, bubbles: true, composed: true }));
+  emit<K extends keyof TEvents & string>(
+    eventName: K,
+    detail: TEvents[K]
+  ): void {
+    this.dispatchEvent(
+      new CustomEvent(eventName, { detail, bubbles: true, composed: true })
+    );
   }
 
   render(): void {
     if (!this.shadowRoot) return;
 
-    if (this.templateId) {
-      const template = document.getElementById(this.templateId) as HTMLTemplateElement | null;
-      if (template && template.content) {
-        this.shadowRoot.innerHTML = '';
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this.bindActions();
-      } else {
-        console.warn(`Template with id "${this.templateId}" not found.`);
-      }
+    if (this.templateFn) {
+      const html = this.templateFn({ props: this.props });
+      this.shadowRoot.innerHTML = html;
+      this.bindActions();
     }
   }
 
   bindActions(): void {
     if (!this.shadowRoot) return;
-    const actionElements = this.shadowRoot.querySelectorAll<HTMLElement>('[data-action]');
-    actionElements.forEach(el => {
+    const actionElements =
+      this.shadowRoot.querySelectorAll<HTMLElement>('[data-action]');
+    actionElements.forEach((el) => {
       const actions = el.dataset.action?.split(';') || [];
-      actions.forEach(action => {
-        const [event, methodName] = action.split(':').map(s => s.trim());
-        const method = (this as any)[methodName];
+      actions.forEach((action) => {
+        const [event, methodName] = action.split(':').map((s) => s.trim());
+        const method = (this as Record<string, unknown>)[methodName];
         if (event && typeof method === 'function') {
           el.addEventListener(event, method.bind(this));
         } else {
-          console.warn(`No method "${methodName}" found on component for action "${action}"`);
+          console.warn(
+            `No method "${methodName}" found on component for action "${action}"`
+          );
         }
       });
     });
