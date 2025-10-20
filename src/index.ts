@@ -1,5 +1,5 @@
 import './components/index';
 
 const app = document.createElement('div');
-app.textContent = '🚀 TypeScript + Parcel is running!';
+app.textContent = '🚀 Basic Template is running!';
 document.body.appendChild(app);

@@ -1,67 +1,79 @@
 # 🛠️ TypeScript Project Template
 
-A minimal and flexible **TypeScript** starter template for building Node.js or browser-based applications.  
-Includes sensible defaults, linting, and build scripts to get you coding faster.
+A minimal, practical starter for building small browser apps with TypeScript and Web Components using Parcel. Includes example component, Pug templates, and a simple BaseComponent to accelerate development.
 
 ---
 
-## 📦 Features
+## What this project is
 
-- ⚡ **TypeScript** for type safety and modern JavaScript features
-- 🧹 **ESLint + Prettier** for consistent code style
-- 🏗️ **Build scripts** with `tsc`
-- 🧪 **Jest** (optional) for testing
-- 📂 Clean folder structure
+- Opinionated small app template using Parcel v2, TypeScript, Pug templates and CSS.
+- Contains a BaseComponent class that:
+  - accepts a template (template id or template function),
+  - accepts initial props,
+  - proxies `this.props` so direct assignments (e.g. `this.props.count = 1`) update the DOM,
+  - accepts inline or external styles to inject into the shadow root,
+  - performs a one-time template setup and incremental updates thereafter.
+- ExampleComponent demonstrates usage and how to import CSS/Pug as strings for use inside components.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
-### 1️⃣ Clone the repository
+1. Clone
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/bladeski/basic-template.git
+cd basic-template
 ```
-### 2️⃣ Install dependencies
+2. Install
 ```bash
 npm install
 ```
-### 3️⃣ Run in development mode
+3. Develop
 ```bash
 npm run dev
 ```
-### 4️⃣ Build for production
+4. Build
 ```bash
 npm run build
 ```
-## 📂 Project Structure
-```Code
-.
-├── src/            # Source code
-│   └── index.ts    # Entry point
-├── dist/           # Compiled JavaScript output
-├── tests/          # Unit tests (optional)
-├── tsconfig.json   # TypeScript configuration
-├── package.json    # Project metadata & scripts
-└── README.md       # Project documentation
-```
-## ⚙️ Available Scripts
-Command	Description
-`npm run dev`	Run the project in watch mode
-`npm run build`	Compile TypeScript to JavaScript
-`npm run lint`	Check code style with ESLint
-`npm run test`	Run tests with Jest
-## 🧪 Testing
-If you’ve set up Jest:
+5. Test (if enabled)
 ```bash
 npm run test
 ```
-## 📜 License
-This project is licensed under the MIT License.
+
+---
+
+## 📂 Project structure (important files)
+* `src/index.pug` — app entry (imports component templates).
+* `src/components/BaseComponent.ts` — shared base class.
+* `src/components/ExampleComponent/ExampleComponent.pug` — component * template.
+* `src/components/ExampleComponent/ExampleComponent.ts` — component implementation.
+* `src/styles/` — global design tokens and utilities.
+* `src/types/bundle-text.d.ts` — declaration for bundle-text: imports.
+
+---
+
+## ⚙️ Included scripts
+- npm run dev — run in watch/development mode
+- npm run build — compile TypeScript to dist/
+- npm run lint — run ESLint
+- npm run test — run Jest (if configured)
+
+---
 
 ## 💡 Tips
-Update tsconfig.json to match your project’s needs.
+- Adjust tsconfig.json targets and module settings for your environment
+- Add environment variables in .env and share .env.example
+- Keep dependencies updated with npm outdated / npm update
 
-Add environment variables in a .env file (and .env.example for sharing).
+---
 
-Keep dependencies up to date with npm outdated and npm update.
+## Contributing & Extending
+Extend BaseComponent for common behavior.
+Use component-level CSS variables (design tokens in src/styles) to theme components.
+Add unit tests for components using your preferred test runner.
+
+---
+
+## 📜 License
+MIT
