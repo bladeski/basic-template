@@ -1,3 +1,4 @@
+import { BadgeComponent } from './Badge/BadgeComponent';
 import { ExampleComponent } from './ExampleComponent/ExampleComponent';
 
-export { ExampleComponent };
+export { BadgeComponent, ExampleComponent };

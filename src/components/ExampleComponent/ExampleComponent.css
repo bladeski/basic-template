@@ -4,6 +4,11 @@
   padding: 16px;
   border-radius: 8px;
   background-color: var(--color-surface);
+
+  @supports (corner-shape: squircle) {
+    border-radius: var(--radius-squircle);
+    corner-shape: squircle;
+  }
 }
 
 .controls {

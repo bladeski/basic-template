@@ -1,19 +1,59 @@
 @import url("vars.css");
 @import url("base.css");
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
 body {
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(
+      120deg,
+      rgba(var(--color-primary-rgb), 0.08) 0%,
+      rgba(var(--color-accent-rgb), 0.07) 18%,
+      rgba(var(--color-bg-rgb), 0.10) 32%,
+      rgba(var(--color-primary-rgb), 0.06) 45%,
+      rgba(var(--color-accent-rgb), 0.08) 60%,
+      rgba(var(--color-bg-rgb), 0.12) 72%,
+      rgba(var(--color-primary-rgb), 0.07) 85%,
+      rgba(var(--color-accent-rgb), 0.10) 92%,
+      rgba(var(--color-bg-rgb), 0.95) 100%
+    ),
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 8px,
+      rgba(var(--color-primary-rgb), 0.06) 8px 12px,
+      transparent 12px 32px
+    ),
+    repeating-linear-gradient(
+      120deg,
+      transparent 0 20px,
+      rgba(var(--color-accent-rgb), 0.10) 20px 24px,
+      transparent 24px 48px
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   line-height: 1.6;
   font-size: var(--font-size-md);
   padding: var(--space-lg);
+  gap: var(--space-md);
 }
 
 /* small utility examples (optional) */
 .u-pad-sm {
   padding: var(--space-sm);
 }
+
 .u-pad-md {
   padding: var(--space-md);
 }
+
 .u-pad-lg {
   padding: var(--space-lg);
 }
@@ -21,6 +61,7 @@ body {
 .u-mr-sm {
   margin-right: var(--space-sm);
 }
+
 .u-mb-md {
   margin-bottom: var(--space-md);
 }
@@ -28,6 +69,7 @@ body {
 .text-muted {
   color: var(--color-muted);
 }
+
 .text-primary {
   color: var(--color-primary);
 }
@@ -37,3 +79,11 @@ body {
   margin-top: calc(var(--heading-margin-top) / 2);
   margin-bottom: calc(var(--heading-margin-bottom) / 2);
 }
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
